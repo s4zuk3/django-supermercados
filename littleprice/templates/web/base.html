@@ -8,6 +8,8 @@
     <title>Little Price</title>
     <link href="{% static "web/plugins/bootstrap3/css/bootstrap.min.css" %}" rel="stylesheet">
     <link href="{% static "web/css/style.css" %}" rel="stylesheet">
+    <link href="{% static "web/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+    <link href="{% static "web/plugins/social-button/css/bootstrap-social.css" %}" rel="stylesheet">
     
   </head>
   <body>
@@ -72,21 +74,22 @@
       <li><a class="btn btn-default btn-block" href="#" role="button">Mi cuenta</a></li>
       <li><a class="btn btn-default btn-block" href="#" role="button">Mis productos</a></li>
       <li><a class="btn btn-default btn-block" href="#" role="button">Favoritos</a></li>
+      <li><a class="btn btn-default btn-block" href="#" role="button">Supermercados</a></li>
+      <li><a class="btn btn-default btn-block" href="#" role="button">Salir</a></li>
       {% else %}
-      <li><a class="btn btn-default btn-block" href="#" role="button">Login</a></li>
+      <li><a class="btn btn-default btn-block" href="#" role="button">Ingresar</a></li>
       <li><a class="btn btn-default btn-block" href="#" role="button">Registrar cuenta</a></li>
       {% endif %}
-      <li><a class="btn btn-default btn-block" href="#" role="button">Supermercados</a></li>
+      
       </ul>
       
     </div>
 
         <!-- CENTRO -->
-    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       {% block content %}
       
       {% endblock %}
-    </div>
+    
 
         <!-- fin centro -->
   </div>
