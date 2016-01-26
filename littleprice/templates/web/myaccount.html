@@ -5,23 +5,45 @@
 
 
 {% block content %}
+
+<h3 class="sub-header">Mis datos</h3>
 <form>
-<fieldset>
-		<legend>Mis Datos:</legend>
-		<div style="float:left">
-			Correo: <input type="text"><br>
-		<div style="float:left">
-			Nombre: <input type="text"><br>
-		</div>
-			Apellidos: <input type="text"><br>
-			Comuna: <select><option>Cerro Navia</option><option>Santiago</option></select>
-		</div>
-		<div align=right>
-			Contraseña actual: <input type="text"><br>
-			Nueva contraseña: <input type="text"><br>
-			Confirmar contraseña: <input type="text"><br>
-		<button type="submit" name="submitButton" value="Guardar">Guardar</button>
-		</div>
-</fieldset>
+  <fieldset class="form-group">
+    <label for="inputemail1">Email address</label>
+    <input type="email" class="form-control" id="inputemail1" placeholder="Enter email">
+    
+    <small class="text-muted">Ejemplo: littleprice@little.com</small>
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="NombreInput">Nombre:</label>
+    <input type="text" class="form-control" id="NombreInput" placeholder="">
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="ApellidoInput">Apellido:</label>
+    <input type="text" class="form-control" id="ApellidoInput" placeholder="">
+  </fieldset>
+ <fieldset class="form-group">
+    <label for="ComunaSelect">Comuna:</label>
+    <select class="form-control" id="ComunaSelect">
+	{% for comuna in lista_comunas %}
+      <option>{{ comuna }}</option>
+      {% endfor %}
+    </select>
+  </fieldset>
+   <fieldset class="form-group">
+    <label for="InputPassword1">Contraseña actual:</label>
+    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="InputPassword2">Nueva contraseña:</label>
+    <input type="password" class="form-control" id="InputPassword2" placeholder="Password">
+  </fieldset>
+  <fieldset class="form-group">
+    <label for="InputPassword3">Confirmar nueva contraseña:</label>
+    <input type="password" class="form-control" id="InputPassword3" placeholder="Password">
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Guardar</button>
 </form>
+
+
 {% endblock %}

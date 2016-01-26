@@ -17,6 +17,10 @@ body{
 }
 
 
+.form-control{
+  width: 250px;
+}
+
 /*
  * Sidebar
  */
