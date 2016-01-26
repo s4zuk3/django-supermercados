@@ -17,4 +17,8 @@ def supermercados_view(request):
 
 	return render_to_response('web/supermercados.html', locals()  )
 
+def myaccount_view(request):
+	login_user = 1
+	return render_to_response('web/myaccount.html',locals())
+
 

@@ -1,0 +1,27 @@
+
+{% extends "web/base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+<form>
+<fieldset>
+		<legend>Mis Datos:</legend>
+		<div style="float:left">
+			Correo: <input type="text"><br>
+		<div style="float:left">
+			Nombre: <input type="text"><br>
+		</div>
+			Apellidos: <input type="text"><br>
+			Comuna: <select><option>Cerro Navia</option><option>Santiago</option></select>
+		</div>
+		<div align=right>
+			Contraseña actual: <input type="text"><br>
+			Nueva contraseña: <input type="text"><br>
+			Confirmar contraseña: <input type="text"><br>
+		<button type="submit" name="submitButton" value="Guardar">Guardar</button>
+		</div>
+</fieldset>
+</form>
+{% endblock %}
