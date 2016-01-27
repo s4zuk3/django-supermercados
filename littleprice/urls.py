@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from littleprice.views import index_view, supermercados_view, myaccount_view, login_view, registro_view, mis_productos_view, favoritos_view
+from littleprice.views import index_view, supermercados_view, myaccount_view, login_view, registro_view, mis_productos_view, favoritos_view, canasta_basica_view, grafico_view
 from . import views
 
 urlpatterns = [
@@ -10,5 +10,7 @@ urlpatterns = [
 	url(r'^registro/$', registro_view),
 	url(r'^mis_productos/$', mis_productos_view),
 	url(r'^favoritos/$', favoritos_view),
+	url(r'^canasta_basica/$', canasta_basica_view),
+	url(r'^grafico/$', grafico_view),
 
 ]

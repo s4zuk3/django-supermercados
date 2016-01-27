@@ -1,0 +1,72 @@
+{% extends "web/base.html" %}
+{% load staticfiles %}
+
+{%block head %}
+<script src="{% static "web/plugins/jscharts/js/jscharts.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    
+          <h2 class="sub-header">{{ nombre_producto }} - {{ marca }}</h2>
+          
+          <div id="grafico_producto">Cargando gráfico</div>
+         <script type="text/javascript">
+  
+  var myChart = new JSChart('grafico_producto', 'line');
+  myChart.setDataArray([[1, 400],[2, 400],[3, 389],[4, 389],[5, 389],[6, 750],[7, 750],[8, 750],[9, 750],[10, 750],[11, 760],[12, 765]], 'blue');
+  myChart.setDataArray([[1, 350],[2, 360],[3, 320],[4, 380],[5, 410],[6, 400],[7, 400],[8, 410],[9, 410],[10, 410],[11, 425],[12, 425]], 'green');
+  myChart.setDataArray([[1, 550],[2, 550],[3, 550],[4, 580],[5, 540],[6, 820],[7, 820],[8, 820],[9, 820],[10, 820],[11, 820],[12, 850]], 'gray');
+  myChart.setSize(700, 300);
+  myChart.setAxisNameX('Mes');
+  myChart.setAxisNameY('Precio');
+  myChart.setTitle('Precio del arroz en el tiempo');
+
+  myChart.setLegendShow(true);
+  myChart.setLegendPosition(630, 80);
+  myChart.setLegendForLine('blue', 'Lider');
+  myChart.setLegendForLine('green', 'Ekonno');
+  myChart.setLegendForLine('gray', 'SanCuico');
+
+  myChart.setAxisValuesNumberY(5);
+  myChart.setAxisValuesNumberX(6);
+  myChart.setShowXValues(false);
+
+  myChart.setLabelX([2,'Febrero']);
+  myChart.setLabelX([4,'Abril']);
+  myChart.setLabelX([6,'Junio']);
+  myChart.setLabelX([8,'Agosto']);
+  myChart.setLabelX([10,'Octubre']);
+  myChart.setLabelX([12,'Diciembre']);
+
+  myChart.setTitleColor('#454545');
+  myChart.setAxisValuesColor('#454545');
+  myChart.setLineColor('#A4D314', 'green');
+  myChart.setLineColor('#BBBBBB', 'gray');
+  myChart.setTooltip([1,' ']);
+  myChart.setTooltip([2,' ']);
+  myChart.setTooltip([3,' ']);
+  myChart.setTooltip([4,' ']);
+  myChart.setTooltip([5,' ']);
+  myChart.setTooltip([6,' ']);
+  myChart.setTooltip([7,' ']);
+  myChart.setTooltip([8,' ']);
+  myChart.setTooltip([9,' ']);
+  myChart.setTooltip([10,' ']);
+  myChart.setTooltip([11,' ']);
+  myChart.setTooltip([12,' ']);
+  myChart.setFlagColor('#9D16FC');
+  myChart.setFlagRadius(4);
+  myChart.setAxisPaddingRight(100);
+
+  myChart.draw();
+  
+</script>
+
+</div>
+
+
+   
+
+{%  endblock %}

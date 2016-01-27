@@ -3,5 +3,37 @@
 
 {% block content %}
 
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    
+          <h2 class="sub-header">{{ nombre_producto }}</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              
+
+
+              <thead>
+                <tr>
+                  <th>Ranking</th>
+                  <th>Supermercado</th>
+                  <th>Marca</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                
+              {% for supers in lista_datos %}
+                <tr>
+                  <td># {{ forloop.counter }}</td>
+                  <td>{{ supers.0 }}</td>
+                  <td>{{ supers.1 }}</td>
+                  <td>$ {{ supers.2 }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+
 
 {%  endblock %}

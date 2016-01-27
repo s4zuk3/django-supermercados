@@ -64,3 +64,36 @@ def mis_productos_view(request):
 def favoritos_view(request):
 	login_user = 1
 	return render_to_response('web/favoritos.html',locals())
+
+
+#VISTA COMUN PARA LOS 10 PRODUCTOS.
+#login_user 0 o 1, puede estar aca si esta o no logeado.
+#nombre_producto = nombre del producto elegido a mostrar
+#lista_datos = una lista de listas, guarda los datos en orden acendente en precio. (Super, Marca, precio)
+def canasta_basica_view(request):
+	login_user = 0
+	nombre_producto = 'Arroz'
+	lista_datos = [ ['Lider','Acuenta',300],
+					 ['Ekkono','Acuenta',350],
+					 ['Lider','Campo Lindo',376],
+					 ['La Pobla','ElArrozDelWeno',480],
+					 ['Santa Isabel','Campo Lindo',800],
+					 ['SuperCuico','LosMasCaros',2500],
+					 ]
+	return render_to_response('web/canasta_basica.html',locals())
+
+
+#falta definir, nose usar el javascript que puse. Solo lo ordene y trate de entender xd pero nose enviarle los datos de db
+def grafico_view(request):
+	login_user = 0
+	nombre_producto = 'Arroz'
+	nombre_supermercado = 'Lider'
+	marca = 'Acuenta'
+
+	return render_to_response('web/grafico.html',locals())
+
+def comparar_productos_view(request):
+	login_user = 1
+	productos = ['Arroz','Harina']
+	
+	return render_to_response('web/grafico.html',locals())
