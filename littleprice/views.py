@@ -40,3 +40,27 @@ def login_view(request):
 def registro_view(request):
 	login_user = 0
 	return render_to_response('web/registro.html',locals())
+
+
+#vista comun al seleccionar un producto de canasta basica
+#da lo mismo que login user, todos pueden ver esta
+#definir name_title y el diccionario con el producto relacionado que llamo a esta vista
+def canasta_basica_view(request):
+	login_user = 0
+	
+	name_title = Arroz
+	diccionario_productos = { 'Acuenta':357,'Campo Lindo':451,'Sabanero':555}
+	marca_precio = diccionario_productos.items()
+	
+
+	return render_to_response('web/canasta_basica.html',locals())
+
+#login_user 1, solo puede estar aca si esta logeado
+def mis_productos_view(request):
+	login_user = 1
+	return render_to_response('web/mis_productos.html',locals())
+
+	#login_user 1, solo puede estar aca si esta logeado
+def favoritos_view(request):
+	login_user = 1
+	return render_to_response('web/favoritos.html',locals())
