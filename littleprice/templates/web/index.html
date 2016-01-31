@@ -3,7 +3,47 @@
 
 {% block content %}
 
-
+<div class="container">
+		<form>
+			<legend>Ultimas actulizaciones</legend>
+			<div id="products" class="row list-group">
+				{% for producto,detalle,precio in ultimos_actualizados %}
+				<div class="item  col-xs-4 col-lg-4">
+					<div class="thumbnail">
+						<img class="group list-group-image" src="https://pbs.twimg.com/profile_images/651010324108341248/b2uxdTZk.png" alt="" width="200" height="200"/>
+						<div class="caption">
+							<h4 class="group inner list-group-item-heading">
+								{{producto}}</h4>
+							<p class="group inner list-group-item-text">
+								Detalles del producto: {{detalle}}</p>
+							<div class="row">
+								<div class="col-xs-12 col-md-6">
+									<p class="lead">
+										${{precio}}</p>
+								</div>
+								<div class="col-xs-12 col-md-6">
+									<a class="btn btn-success center-block" href="http://www.jquery2dotnet.com ">Like?</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			
+		</form>
+	</div>
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+		<h3 class="sub-header">Auspiciadores</h3> 
+		<div class="row placeholders">
+ 			{% for supermercado in auspiciadores %}
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <img src="{% static "web/img/sponsors" %}/{{ supermercado }}.jpg" width="100" height="100" class="img-responsive" alt="Generic placeholder thumbnail">
+              <h4>{{ supermercado }}</h4>
+            </div>
+            {% endfor %}
+          </div>
+	</div>
 
 {%  endblock %}
 

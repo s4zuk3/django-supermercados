@@ -5,6 +5,7 @@ from django.shortcuts import render_to_response
 
 #login_user (0 o 1), se utiliza para definir las opciones del panel a mostrar. aca puede ser 0 o 1
 def index_view(request):
+	#sin informacion sobre los datos a enviar, revisar index.html
 	login_user = 1
 	return render_to_response('web/index.html',locals())
 
@@ -97,3 +98,9 @@ def comparar_productos_view(request):
 	productos = ['Arroz','Harina']
 	
 	return render_to_response('web/grafico.html',locals())
+
+	
+
+def ingresar_producto_view(request):
+	login_user = 1
+	return render_to_response('web/ingresar_producto.html',locals())
